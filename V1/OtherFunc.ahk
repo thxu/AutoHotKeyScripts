@@ -2,9 +2,12 @@
 ~RShift:: func_SwitchIme(1) return
 LShift & Space:: func_SwitchIme(1) return
 
-
-
-
+#If CapsLockMode
+;鼠标左键点击自动选择单词
+LButton:: keyFunc_selectCurrentWordAfterClick() return
+RButton:: keyFunc_copy() return
+;鼠标右键点击自动复制
+#If
 
 #n::
 {
@@ -29,4 +32,9 @@ func_SwitchIme(ime := "A"){
     return
 }
 
-
+keyFunc_selectCurrentWordAfterClick(){
+	SendInput, {LButton}
+	SendInput, ^{Left}
+    SendInput, +^{Right}
+    return
+}
