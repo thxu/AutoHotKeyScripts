@@ -4,10 +4,10 @@ k:: keyFunc_moveDown(1) return
 j:: keyFunc_moveLeft(1) return
 l:: keyFunc_moveRight(1) return
 
-!i:: keyFunc_moveWordLeft(1) return
-!k:: keyFunc_moveWordRight(1)  return
-!j:: keyFunc_moveLeft(5) return
-!l:: keyFunc_moveRight(5) return
+!i:: keyFunc_moveUp(4) return
+!k:: keyFunc_moveDown(4)  return
+!j:: keyFunc_moveWordLeft(1) return
+!l:: keyFunc_moveWordRight() return
 
 
 
@@ -17,16 +17,17 @@ l:: keyFunc_moveRight(1) return
 +j:: keyFunc_selectLeft(1) return
 +l:: keyFunc_selectRight(1) return
 
-!+i:: keyFunc_selectUp(3) return
-!+k:: keyFunc_selectDown(3) return
+!+i:: keyFunc_selectUp(4) return
+!+k:: keyFunc_selectDown(4) return
 !+j:: keyFunc_selectLeft(5) return
 !+l:: keyFunc_selectRight(5) return
 
 
 
 
-n:: keyFunc_moveUp(3)  return
-m:: keyFunc_moveDown(3) return
+n:: keyFunc_moveLeft(5)  return
+m:: keyFunc_moveRight(5) return
+
 !n:: keyFunc_moveWordLeft(3) return
 !m:: keyFunc_moveWordRight(3) return
 
@@ -48,6 +49,8 @@ u:: keyFunc_home() return
 o:: keyFunc_end() return
 !u:: keyFunc_selectHome() return
 !o:: keyFunc_selectEnd() return
+y:: keyFunc_selectHome() return
+p:: keyFunc_selectEnd() return
 
 
 
@@ -116,10 +119,11 @@ keyFunc_selectRight(i:=1){
     SendInput, +{Right %i%}
     return
 }
-
-
+;move word left
 keyFunc_moveWordLeft(i:=1){
-    SendInput,^{Left %i%}
+    SendInput, ^{Left %i%}
+    ;showToolTip("ss")
+    ;SendInput,^{Left %i%}
     return
 }
 keyFunc_moveWordRight(i:=1){
