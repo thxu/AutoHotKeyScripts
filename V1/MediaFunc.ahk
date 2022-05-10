@@ -39,34 +39,28 @@ MouseIsTouchScreenTopRight(){
 
 
 
-;上一首
 keyFunc_mediaPrev(){
     SendInput, {Media_Prev}
     return
 }
-;下一首
 keyFunc_mediaNext(){
     SendInput, {Media_Next}
     return
 }
-;歌曲暂停
 keyFunc_mediaPlayPause(){
     SendInput, {Media_Play_Pause}
     return
 }
 
 
-;音量加
 keyFunc_volumeUp(){
     SendInput, {Volume_Up}
     return
 }
-;音量减
 keyFunc_volumeDown(){
     SendInput, {Volume_Down}
     return
 }
-;静音
 keyFunc_volumeMute(){
     SendInput, {Volume_Mute}
     return

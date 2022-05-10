@@ -2,11 +2,10 @@
 WheelDown:: func_scrollRight(15) return
 WheelUp:: func_scrollLeft(15) return
 
-;WheelDown:: func_scrollRight_2() return
+;WheelDown:: func_scrollRight_1() return
 ;WheelUp:: func_scrollLeft_1() return
 #If
 
-;虚拟屏幕切换
 +WheelDown:: func_SwitchToNextDesktop() return
 +WheelUp:: func_SwitchToPrevDesktop() return
 
@@ -19,13 +18,11 @@ WheelUp:: func_SwitchToPrevDesktop() return
 #If
 
 
-;Tab页切换
 #If MouseIsTouchScreenTop()
 WheelDown:: func_SwitchToNextTab() return
 WheelUp:: func_SwitchToPrevTab() return
 #If
 
-;页面滚动
 #If MouseIsTouchScreenLeft()
 WheelDown:: func_pageDn() return
 WheelUp:: func_pageUP() return
@@ -37,14 +34,12 @@ WheelUp:: func_pageUP() return
 #If
 
 
-;滚轮向左水平滚动
 func_scrollLeft(i:=1){
     ControlGetFocus, fcontrol, A
     Loop %i%
         SendMessage, 0x114, 0, 0, %fcontrol%, A  ; 0x114 is WM_HSCROLL and the 0 after it is SB_LINELEFT.  
     return
 }
-;滚轮向右水平滚动
 func_scrollRight(i:=1){
     ControlGetFocus, fcontrol, A
     Loop %i%
@@ -54,13 +49,11 @@ func_scrollRight(i:=1){
 
 
 
-;滚轮向左水平滚动
 func_scrollLeft_1(){
     MouseClick,WheelLeft,,,15,100,D,R
     return
 }
-;滚轮向右水平滚动
-func_scrollRight_2(){
+func_scrollRight_1(){
     MouseClick,WheelRight,,,15,100,D,R
     return
 }
