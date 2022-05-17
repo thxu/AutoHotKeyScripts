@@ -92,6 +92,9 @@ MouseIsTouchScreenBottom(){
     CoordMode, Mouse, Screen ;set coordinates mode to be relative to the whole screen
     MouseGetPos, mX, mY ;store the X coordinate of the mouse in mx
     SysGet, VirtualScreenHeight, 79
+    ;SysGet, tmp1, 76
+    ;SysGet, tmp2, 77
+    ;showToolTip(VirtualScreenHeight . "//" . tmp2 . "////(" . mX . "," . mY)
     ;aa:=abs(VirtualScreenHeight - mY)
     ;showToolTip(mY . "--" . aa)
     if (abs(VirtualScreenHeight - mY) <= 2 ) ;if the "absolute" difference is within 2 pixels

@@ -6,8 +6,8 @@ l:: keyFunc_moveRight(1) return
 
 !i:: keyFunc_moveUp(4) return
 !k:: keyFunc_moveDown(4)  return
-!j:: keyFunc_moveWordLeft(1) return
-!l:: keyFunc_moveWordRight() return
+!j:: keyFunc_moveLeft(5) return
+!l:: keyFunc_moveRight(5) return
 
 
 
@@ -25,8 +25,8 @@ l:: keyFunc_moveRight(1) return
 
 
 
-n:: keyFunc_moveLeft(5)  return
-m:: keyFunc_moveRight(5) return
+n:: keyFunc_moveWordLeft(1)  return
+m:: keyFunc_moveWordRight(1) return
 
 !n:: keyFunc_moveWordLeft(3) return
 !m:: keyFunc_moveWordRight(3) return
@@ -197,7 +197,7 @@ keyFunc_deleteWord(){
 
 
 keyFunc_preEnterWherever(){
-    SendInput,{Home}{Enter}{Left}
+    SendInput,{Home}{Enter}{Up}
     return
 }
 keyFunc_enterWherever(){
